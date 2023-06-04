@@ -13,8 +13,9 @@
     display: inline-block;
     position: relative;
     top: -56px;
-    text-align: center;
+    /* text-align: center; */
     background-color: white;
+    max-width: 350px;
     font-size: 2em;
     font-weight: bold;
     color: #453f78;
@@ -22,4 +23,10 @@
 
 .main {
     margin-top: -45px;
+}
+
+@media (max-width: 576px) {
+    .fieldset > span {
+        text-align: center;
+    }
 }

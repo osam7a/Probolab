@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'reactstrap';
 
 function Question(props) {
     var question_data = props.question_data;
@@ -9,13 +10,23 @@ function Question(props) {
     var problem_subject = question_data[4]
 
     return (
-        <fieldset className="fieldset flex-grow-1">
+        <div className="fieldset flex-grow-1 d-flex flex-column">
             <span>{problem_subject}</span>
-            <div className="main">
-                <h1 id="question_text">{problem_text}</h1>
-                <h3 className="text-muted">{problem_description}</h3>
+            <div className="main flex-grow-1 d-flex flex-column">
+                <div className="row gap-3 flex-grow-1 flex-md-grow-0">
+                    <div className="col-md">
+                        <h1 id="question_text">{problem_text}</h1>
+                        <h3 className="text-muted">{problem_description}</h3>
+                    </div>
+                    <div className="col-md order-md-last order-first">
+                        <canvas style={{border: "1px solid red"}} className="w-100 h-100"></canvas>
+                    </div>
+                </div>
+                <div className="row flex-md-grow-1">
+                    <Button style={{backgroundColor: "#759aab"}}>test</Button>
+                </div>
             </div>
-        </fieldset>
+        </div>
     )
 }
 
