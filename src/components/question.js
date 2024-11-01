@@ -8,6 +8,7 @@ function Question(props) {
     var problem_steps = question_data[3];
     var problem_subject = question_data[4];
     var hide_input = question_data[5];
+    var problem_answer_label = question_data[6] || "Answer";
 
     return (
         <div className="fieldset flex-grow-1 d-flex flex-column">
@@ -20,7 +21,7 @@ function Question(props) {
                         {hide_input ? null :
                         <div className="mt-auto" id="prediction-container">
                             <div className="input-group">
-                                <span className="input-group-text" id="prediction-label">Test</span>
+                                <span className="input-group-text" id="prediction-label">{problem_answer_label}</span>
                                 <input type="text" className="form-control" placeholder="Enter your prediction here" aria-label="Username" aria-describedby="basic-addon1" id="prediction" />
                             </div>
                         </div>
